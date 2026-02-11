@@ -40,19 +40,15 @@ export default function Support() {
   const faqs = [
     {
       question: "How do I report a bug or an issue?",
-      answer: "Please send an email to contact@starflux.digital with your device model, OS version, and a detailed description of the issue. Screenshots or screen recordings are highly appreciated as they help our developers identify the problem faster."
+      answer: "Please send an email to contact@starflux.digital with your device model, OS version, and a detailed description of the issue. Screenshots are highly appreciated!"
     },
     {
       question: "How can I request a refund?",
-      answer: "For iOS users, please request refunds directly through the Apple App Store. For Android users, please contact Google Play Support. If you have specific issues with in-app purchases, feel free to email us with your transaction ID and we'll do our best to assist you."
+      answer: "For iOS users, please request refunds directly through the Apple App Store. For Android users, please contact Google Play Support. If you have specific issues with in-app purchases, email us with your transaction ID."
     },
     {
       question: "Where can I find your Privacy Policy?",
-      answer: <>You can view our Privacy Policy <Link to="/privacy" className="text-indigo-400 hover:underline">here</Link>. We are committed to protecting your data and being transparent about how our apps function.</>
-    },
-    {
-      question: "What platforms do your apps support?",
-      answer: "Most of our current tools are developed for iOS and Android. We also explore web-based utilities and AR experiences for compatible devices."
+      answer: <>You can view our Privacy Policy <Link to="/privacy" className="text-indigo-400 hover:underline">here</Link>.</>
     }
   ];
 
@@ -211,14 +207,41 @@ export default function Support() {
         </div>
       </main>
 
-      <footer className="border-t border-white/5 py-12 text-center">
+      <footer className="border-t border-white/5 py-12 bg-[#0A0A0C]">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-sm text-gray-600 mb-4">
-            &copy; 2026 {companyName}. All rights reserved.
-          </p>
-          <div className="flex items-center justify-center gap-6 text-xs text-gray-500">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+             {/* Company Info */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center">
+                  <div className="w-2 h-2 bg-white rounded-full opacity-80" />
+                </div>
+                <span className="text-lg font-bold text-white font-space">Star Flux Digital</span>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
+                Crafting the unseen logic that powers the visible world.
+              </p>
+            </div>
+
+            {/* Mailing Address */}
+            <div className="md:text-right">
+              <h4 className="text-white font-bold mb-4">Mailing Address</h4>
+               <p className="text-gray-400 text-sm leading-relaxed">
+                Star Flux Digital LLC<br />
+                30 N Gould St Ste R<br />
+                Sheridan, WY 82801, USA
+              </p>
+            </div>
+          </div>
+
+          <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-600">
+              &copy; 2026 {companyName}. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6 text-xs text-gray-500">
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            </div>
           </div>
         </div>
       </footer>
