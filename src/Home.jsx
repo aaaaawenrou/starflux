@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom';
 // Replacing lucide-react imports with self-contained SVG components for maximum stability.
 
 const IconBase = ({ size = 24, className = "", children }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
     {children}
@@ -156,7 +156,7 @@ const ParticleBackground = () => {
     const particleCount = 100;
     const particles = [];
     const connectionDistance = 150;
-    
+
     // Resize handling
     const handleResize = () => {
       width = window.innerWidth;
@@ -203,7 +203,7 @@ const ParticleBackground = () => {
     // Animation Loop
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
-      
+
       // Update and draw particles
       particles.forEach(p => {
         p.update();
@@ -241,8 +241,8 @@ const ParticleBackground = () => {
   }, []);
 
   return (
-    <canvas 
-      ref={mountRef} 
+    <canvas
+      ref={mountRef}
       className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 opacity-60"
     />
   );
@@ -262,13 +262,16 @@ const NavBar = ({ onContactClick }) => (
           Star Flux <span className="text-white/40 font-light">Digital</span>
         </span>
       </div>
-      <button 
-        onClick={onContactClick}
-        className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium hover:bg-white/10 transition-all text-white flex items-center gap-2 group"
-      >
-        Contact Us
-        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-      </button>
+      <div className="flex items-center gap-6">
+        <Link to="/support" className="text-gray-400 hover:text-white transition-colors text-sm font-medium">Support</Link>
+        <button
+          onClick={onContactClick}
+          className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium hover:bg-white/10 transition-all text-white flex items-center gap-2 group"
+        >
+          Contact Us
+          <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+        </button>
+      </div>
     </div>
   </nav>
 );
@@ -276,7 +279,7 @@ const NavBar = ({ onContactClick }) => (
 const Hero = () => (
   <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
     <ParticleBackground />
-    
+
     {/* Background Gradient Glow */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none" />
 
@@ -285,7 +288,7 @@ const Hero = () => (
         <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
         Est. 2026
       </div>
-      
+
       <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-6 font-space animate-fade-in-up delay-100">
         Building the <br className="hidden md:block" />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-400 to-indigo-400 animate-gradient-x">
@@ -293,14 +296,14 @@ const Hero = () => (
         </span>,
         <br />One Pixel at a Time.
       </h1>
-      
+
       <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up delay-200">
         We are a creative software studio crafting intuitive mobile applications, immersive games, and next-gen digital utilities. Where logic meets imagination.
       </p>
-      
+
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
-        <a 
-          href="#projects" 
+        <a
+          href="#projects"
           onClick={(e) => {
             e.preventDefault();
             document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -311,7 +314,7 @@ const Hero = () => (
         </a>
       </div>
     </div>
-    
+
     <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
       <div className="w-5 h-8 rounded-full border border-white/30 flex justify-center pt-2">
         <div className="w-1 h-2 bg-white/50 rounded-full" />
@@ -336,7 +339,7 @@ const Mission = () => (
               We leverage cutting-edge technologies like Flutter, Unity, and Unreal Engine 5 to bring ideas to life, ensuring that every interaction is smooth, responsive, and visually stunning.
             </p>
           </div>
-          
+
           <div className="mt-10 flex items-center gap-8">
             <div className="flex flex-col">
               <span className="text-3xl font-bold text-white font-space">4+</span>
@@ -349,7 +352,7 @@ const Mission = () => (
             </div>
           </div>
         </div>
-        
+
         <div className="relative">
           {/* Abstract Code Illustration */}
           <div className="relative z-10 bg-[#111113] rounded-2xl border border-white/10 p-6 shadow-2xl overflow-hidden group hover:border-indigo-500/30 transition-colors duration-500">
@@ -387,7 +390,7 @@ const Mission = () => (
             </div>
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-violet-600/20 rounded-full blur-[60px]" />
           </div>
-          
+
           {/* Decorative Elements */}
           <div className="absolute -top-6 -right-6 w-24 h-24 border border-indigo-500/20 rounded-full animate-spin-slow" />
           <div className="absolute -bottom-6 -left-6 w-32 h-32 border border-violet-500/20 rounded-full animate-reverse-spin" />
@@ -473,19 +476,19 @@ const ContactModal = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-[#0A0A0C]/80 backdrop-blur-sm transition-opacity animate-in fade-in duration-200"
         onClick={onClose}
       />
-      
+
       {/* Modal Content */}
       <div className="relative w-full max-w-lg bg-[#111113] border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 ring-1 ring-white/10">
-        
+
         {/* Header Background Gradient */}
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-indigo-500/20 to-transparent pointer-events-none" />
-        
+
         <div className="relative p-8">
-          <button 
+          <button
             onClick={onClose}
             className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
           >
@@ -523,11 +526,10 @@ const ContactModal = ({ onClose }) => {
               </div>
             </div>
           </div>
-          
           <div className="mt-8 pt-8 border-t border-white/5">
-             <p className="text-center text-gray-500 text-sm">
-                We typically respond within 24 hours.
-             </p>
+            <p className="text-center text-gray-500 text-sm">
+              We typically respond within 24 hours.
+            </p>
           </div>
         </div>
       </div>
@@ -543,19 +545,19 @@ const ProjectModal = ({ project, onClose, onRequestDemo }) => {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-[#0A0A0C]/80 backdrop-blur-sm transition-opacity animate-in fade-in duration-200"
         onClick={onClose}
       />
-      
+
       {/* Modal Content */}
       <div className="relative w-full max-w-2xl bg-[#111113] border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 ring-1 ring-white/10">
-        
+
         {/* Header Background Gradient */}
         <div className={`absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-${project.accent}-500/20 to-transparent pointer-events-none`} />
-        
+
         <div className="relative p-8">
-          <button 
+          <button
             onClick={onClose}
             className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
           >
@@ -603,9 +605,8 @@ const ProjectModal = ({ project, onClose, onRequestDemo }) => {
                 <Code2 size={18} />
                 <span className="font-mono text-sm">{project.tech}</span>
               </div>
-              
               <div className="mt-6 pt-6 border-t border-white/5">
-                <button 
+                <button
                   onClick={onRequestDemo}
                   className="w-full py-3 rounded-lg bg-white text-black font-bold hover:bg-gray-200 transition-colors flex items-center justify-center gap-2"
                 >
@@ -637,7 +638,7 @@ const ProjectCard = ({ project, onClick }) => {
   };
 
   return (
-    <div 
+    <div
       onClick={() => onClick(project)}
       className={`${sizeClasses[project.size]} group relative bg-[#111113] border border-white/5 rounded-2xl p-8 transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-2xl cursor-pointer overflow-hidden hover:border-white/10`}
     >
@@ -646,11 +647,10 @@ const ProjectCard = ({ project, onClick }) => {
           View Details <ArrowRight size={14} />
         </div>
       </div>
-      
       <div className={`w-14 h-14 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center mb-6 text-white transition-all duration-300 ${accentColors[project.accent]}`}>
         <Icon size={28} />
       </div>
-      
+
       <div className="relative z-10">
         <h3 className="text-xl font-bold text-white mb-2 font-space group-hover:text-white transition-colors">{project.title}</h3>
         <p className="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-3 group-hover:text-gray-400 transition-colors">{project.category}</p>
@@ -678,9 +678,9 @@ const Projects = ({ onRequestDemo }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projectsData.map((project) => (
-            <ProjectCard 
-              key={project.id} 
-              project={project} 
+            <ProjectCard
+              key={project.id}
+              project={project}
               onClick={setSelectedProject}
             />
           ))}
@@ -689,9 +689,9 @@ const Projects = ({ onRequestDemo }) => {
 
       {/* Modal */}
       {selectedProject && (
-        <ProjectModal 
-          project={selectedProject} 
-          onClose={() => setSelectedProject(null)} 
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
           onRequestDemo={() => {
             setSelectedProject(null);
             setTimeout(onRequestDemo, 300);
@@ -731,11 +731,10 @@ const TechStack = () => {
 const Footer = () => (
   <footer id="contact" className="bg-[#0A0A0C] pt-28 pb-16 border-t border-white/5">
     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12">
-      
       <div className="max-w-sm">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-8 h-8 rounded bg-indigo-600 flex items-center justify-center">
-             <div className="w-2.5 h-2.5 bg-white rounded-full opacity-80" />
+            <div className="w-2.5 h-2.5 bg-white rounded-full opacity-80" />
           </div>
           <span className="text-xl font-bold text-white font-space">Star Flux Digital</span>
         </div>
@@ -743,10 +742,13 @@ const Footer = () => (
           Crafting the unseen logic that powers the visible world.
         </p>
         <p className="text-gray-600 text-sm">
-          © 2026 Star Flux Digital LLC. All rights reserved.
+          &copy; 2026 Star Flux Digital LLC. All rights reserved.
         </p>
-        <div className="mt-4">
-          <Link to="/privacy" className="text-gray-500 hover:text-indigo-400 transition-colors text-sm">
+        <div className="mt-4 flex flex-wrap gap-4">
+          <Link to="/support" className="text-gray-500 hover:text-indigo-400 transition-colors text-sm font-medium">
+            Support Center
+          </Link>
+          <Link to="/privacy" className="text-gray-500 hover:text-indigo-400 transition-colors text-sm font-medium">
             Privacy Policy
           </Link>
         </div>
@@ -754,17 +756,16 @@ const Footer = () => (
 
       <div className="flex flex-col gap-8">
         <h4 className="text-white text-xl font-bold font-space">Contact Info</h4>
-        
         <div className="flex items-start gap-4 group">
           <div className="mt-1 p-2 bg-white/5 rounded-lg text-indigo-500 group-hover:bg-indigo-500 group-hover:text-white transition-colors">
-             <MapPin size={24} />
+            <MapPin size={24} />
           </div>
           <div>
-             <span className="block text-gray-500 text-sm uppercase tracking-wider font-semibold mb-1">Office Address</span>
-             <address className="not-italic text-gray-300 text-lg leading-relaxed">
-               30 N Gould St Ste R<br />
-               Sheridan, WY 82801
-             </address>
+            <span className="block text-gray-500 text-sm uppercase tracking-wider font-semibold mb-1">Office Address</span>
+            <address className="not-italic text-gray-300 text-lg leading-relaxed">
+              30 N Gould St Ste R<br />
+              Sheridan, WY 82801
+            </address>
           </div>
         </div>
 
