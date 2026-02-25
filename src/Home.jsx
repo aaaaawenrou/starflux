@@ -401,7 +401,26 @@ const Mission = () => (
 );
 
 // --- Extended Projects Data with Details ---
+import nomadRoutineIcon from './assets/nomad_routine_icon.png';
+
 const projectsData = [
+  {
+    id: 'nomad-routine',
+    title: "Nomad Routine",
+    category: "Digital Nomad Anti-Burnout Engine",
+    desc: "A smart rhythm engine designed specifically to protect freelancers and digital nomads from burnout using fluid physical capacities and a tri-state flip (Work/Learn/Life).",
+    image: nomadRoutineIcon,
+    size: "large",
+    accent: "indigo",
+    features: [
+      "Fluid Bucket Capacity Management",
+      "Tri-State UI Flip (Work/Learn/Life)",
+      "Reality Check Time Inflation Data",
+      "Hardcore Anti-Burnout Lockout"
+    ],
+    status: "Completed",
+    tech: "Flutter / Riverpod / Isar DB"
+  },
   {
     id: 'boardkit',
     title: "BoardKit",
@@ -565,8 +584,12 @@ const ProjectModal = ({ project, onClose, onRequestDemo }) => {
           </button>
 
           <div className="flex items-start gap-6 mb-8">
-            <div className={`p-4 rounded-xl bg-white/5 border border-white/10 text-${project.accent}-400`}>
-              <Icon size={40} />
+            <div className={`w-16 h-16 rounded-xl bg-white/5 border border-white/10 text-${project.accent}-400 overflow-hidden flex items-center justify-center shrink-0 p-1`}>
+              {project.image ? (
+                <img src={project.image} alt={project.title} className="w-12 h-12 object-contain" style={{ borderRadius: '6px' }} />
+              ) : (
+                <Icon size={40} />
+              )}
             </div>
             <div>
               <div className="flex items-center gap-3 mb-1">
@@ -647,8 +670,12 @@ const ProjectCard = ({ project, onClick }) => {
           View Details <ArrowRight size={14} />
         </div>
       </div>
-      <div className={`w-14 h-14 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center mb-6 text-white transition-all duration-300 ${accentColors[project.accent]}`}>
-        <Icon size={28} />
+      <div className={`w-14 h-14 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center mb-6 text-white transition-all duration-300 overflow-hidden ${accentColors[project.accent]}`}>
+        {project.image ? (
+          <img src={project.image} alt={project.title} className="w-9 h-9 object-contain" style={{ borderRadius: '4px' }} />
+        ) : (
+          <Icon size={28} />
+        )}
       </div>
 
       <div className="relative z-10">
@@ -750,6 +777,12 @@ const Footer = () => (
           </Link>
           <Link to="/privacy" className="text-gray-500 hover:text-indigo-400 transition-colors text-sm font-medium">
             Privacy Policy
+          </Link>
+          <Link to="/refund-policy" className="text-gray-500 hover:text-indigo-400 transition-colors text-sm font-medium">
+            Refund policy
+          </Link>
+          <Link to="/terms-of-service" className="text-gray-500 hover:text-indigo-400 transition-colors text-sm font-medium">
+            Terms of Service
           </Link>
         </div>
       </div>
