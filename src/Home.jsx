@@ -141,6 +141,26 @@ const MapPin = (props) => (
   </IconBase>
 );
 
+const Cloud = (props) => (
+  <IconBase {...props}>
+    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+  </IconBase>
+);
+
+const Shield = (props) => (
+  <IconBase {...props}>
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+  </IconBase>
+);
+
+const Database = (props) => (
+  <IconBase {...props}>
+    <ellipse cx="12" cy="5" rx="9" ry="3" />
+    <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+    <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3" />
+  </IconBase>
+);
+
 // --- Three.js Particle System for Hero Section ---
 const ParticleBackground = () => {
   const mountRef = useRef(null);
@@ -290,15 +310,15 @@ const Hero = () => (
       </div>
 
       <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-6 font-space animate-fade-in-up delay-100">
-        Building the <br className="hidden md:block" />
+        Empowering <br className="hidden md:block" />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-400 to-indigo-400 animate-gradient-x">
-          Digital Future
-        </span>,
-        <br />One Pixel at a Time.
+          Decisions
+        </span>
+        <br />with Global Data Intelligence.
       </h1>
 
       <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up delay-200">
-        We are a creative software studio crafting intuitive mobile applications, immersive games, and next-gen digital utilities. Where logic meets imagination.
+        We build high-performance data platforms, AI-driven utilities, and scalable digital ecosystems to bridge the gap between complex web signals and actionable insights.
       </p>
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
@@ -333,10 +353,10 @@ const Mission = () => (
           </h2>
           <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
             <p>
-              At Star Flux Digital, we don't just write code; we solve problems. From complex board game mechanics to everyday productivity tools, our mission is to build software that feels natural, powerful, and indispensable.
+              At Star Flux Digital, we leverage cloud-native architectures and advanced AI models to solve complex problems. From global trend intelligence to high-efficiency productivity tools, our mission is to build software that feels natural, powerful, and indispensable.
             </p>
             <p>
-              We leverage cutting-edge technologies like Flutter, Unity, and Unreal Engine 5 to bring ideas to life, ensuring that every interaction is smooth, responsive, and visually stunning.
+              We leverage cutting-edge technologies like scalable cloud architectures, React, Python, and Flutter to bring ideas to life, ensuring that every interaction is smooth, responsive, and data-driven.
             </p>
           </div>
 
@@ -410,7 +430,7 @@ const projectsData = [
     category: "Global Trend Intelligence",
     desc: "A global trend intelligence platform that aggregates, processes, and analyzes massive volumes of public web signals and API data in real-time to help users discover emerging global trends.",
     icon: Globe,
-    size: "large",
+    size: "full",
     accent: "blue",
     features: [
       "Real-time Data Aggregation",
@@ -439,21 +459,21 @@ const projectsData = [
     tech: "Flutter / Riverpod / Isar DB"
   },
   {
-    id: 'boardkit',
-    title: "BoardKit",
-    category: "Tabletop Companion",
-    desc: "A comprehensive utility suite for board game enthusiasts. Dice rollers, score trackers, and rule management in your pocket.",
-    icon: Box,
+    id: 'fluxparty',
+    title: "Flux Party",
+    category: "MODULAR DIGITAL ARCADE HUB",
+    desc: "A scalable hub featuring modular mini-games and dynamic utilities, powered by a unified digital ecosystem.",
+    icon: Gamepad2,
     size: "large",
     accent: "indigo",
     features: [
-      "Custom 3D Physics Engine for Dice",
-      "Multi-user Score Sync via WebSocket",
-      "Offline-first Rulebook Database",
-      "Dark Mode Optimized for Late Night Gaming"
+      "Modular Mini-Games",
+      "Dynamic Utilities",
+      "Unified Digital Ecosystem",
+      "Scalable Infrastructure"
     ],
-    status: "Live on App Store",
-    tech: "Flutter / Firebase"
+    status: "Live",
+    tech: "Flutter / Cloudflare Integration"
   },
   {
     id: 'fluxfocus',
@@ -668,6 +688,7 @@ const ProjectCard = ({ project, onClick }) => {
     small: "col-span-1",
     medium: "col-span-1 md:col-span-2 lg:col-span-1",
     large: "col-span-1 md:col-span-2",
+    full: "col-span-1 md:col-span-2 lg:col-span-3",
   };
 
   const accentColors = {
@@ -748,10 +769,10 @@ const Projects = ({ onRequestDemo }) => {
 
 const TechStack = () => {
   const techs = [
+    { name: "AWS", icon: Cloud },
+    { name: "Cloudflare", icon: Shield },
+    { name: "Google Cloud / Vertex AI", icon: Database },
     { name: "Flutter", icon: Layers },
-    { name: "Unity", icon: Box },
-    { name: "Unreal Engine 5", icon: Gamepad2 },
-    { name: "Swift / Kotlin", icon: Code2 },
     { name: "Python", icon: Cpu },
   ];
 
