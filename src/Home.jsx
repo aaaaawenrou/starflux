@@ -405,6 +405,23 @@ import nomadRoutineIcon from './assets/nomad_routine_icon.png';
 
 const projectsData = [
   {
+    id: 'truerank',
+    title: "TrueRank",
+    category: "Global Trend Intelligence",
+    desc: "A global trend intelligence platform that aggregates, processes, and analyzes massive volumes of public web signals and API data in real-time to help users discover emerging global trends.",
+    icon: Globe,
+    size: "large",
+    accent: "blue",
+    features: [
+      "Real-time Data Aggregation",
+      "Massive Volume Analytics",
+      "Emerging Trend Discovery",
+      "Public Web Signal Processing"
+    ],
+    status: "Live",
+    tech: "React / Big Data / API Integration"
+  },
+  {
     id: 'nomad-routine',
     title: "Nomad Routine",
     category: "Digital Nomad Anti-Burnout Engine",
